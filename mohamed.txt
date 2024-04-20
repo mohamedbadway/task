@@ -1,0 +1,80 @@
+.HtmLCollection stores only Element Nodes while NodesList stores any type of nodes.
+
+.Collection may be live or static
+
+.Html Collection is a live collection , NodeList is a static.
+
+.There 's an Exception for the NodeList when using childNodes which
+becomes a Live Collection  
+
+   example
+var val = document.getElementByClassName(".prouduct-collection-item); 
+ for(let i=0 ; i<val.length; i++){
+console.log(val[i]);
+for(let node of val) {
+console.log(node);
+
+} 
+A NodeList can contain any node type(text,comment,element,etc)
+An Html Collection only contains an element node
+ 
+Html Collection can be accessed by thier name , id ,or index number
+ Node LIst items can only accessed by thier index number 
+document.querSelectorAll() return NodeList
+document.getElementByCalssName and TagName return HtmlCollection
+ 
+ Dom  Select Element 
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span class="my-span now">Mohamed</span>
+    <span class="my-span">ahmed</span>
+    <p>Hello Mohamed</p>
+    <p>Hello Badway</p>
+   <div id="my-div">Hello ahmed</div>
+   <form action="">
+    <input type="text" name="one" value="hello">   
+  </form>  
+   <form action="">
+    <input type="text" name="two " value="hello"> 
+  </form>  
+<a href="https://google.com">Google</a>
+<a href="https://facebook.com ">Facebook</a>
+ <script src="main.js"></script>
+
+</body>
+</html>
+ 
+  js
+  
+  var myIdEelement = document.getElementById("my-div");
+console.log(myIdEelement);
+
+var myTagName = document.getElementsByTagName("p"); 
+console.log(myTagName[0] );
+myTagName[0].textContent = "MOHAMED  BADWAY " ;
+
+ var myClassElements = document.getElementsByClassName("my-span") ;
+ console.log(myClassElements) ;
+ 
+//  var myQueryElement = document.querySelector(".now");
+// console.log(myQueryElement);
+ 
+
+var myQueryElement   = document.querySelectorAll(".my-span ");
+console.log(myQueryElement );
+
+console.log(document.title);
+console.log(document.body);
+console.log(document.forms[0].one);
+console.log(document.links[1].href);
+
+
+
+     
